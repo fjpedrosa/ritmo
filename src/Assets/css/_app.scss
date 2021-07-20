@@ -1,0 +1,13 @@
+.app {
+  min-height: 100vh;
+  height: 100vh;
+}
+
+.app__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 46px);
+  width: 100%;
+}

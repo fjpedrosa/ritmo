@@ -14,6 +14,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+### `npm build:webpack`
+
+Creates a build using webpack 5. Files are saved in /dist folder
+
+### `npm start:dev`
+
+Start dev-server using webpack 5
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
