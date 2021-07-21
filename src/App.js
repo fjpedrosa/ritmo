@@ -6,8 +6,8 @@ import Filters from "./components/Filters";
 import moment from "moment";
 import { hot } from "react-hot-loader";
 
-const API_URL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-const API_KEY = "h1cU04oP2OM8dblrnkYzgkByOMcVlhwK";
+// const API_URL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+// const API_KEY = "h1cU04oP2OM8dblrnkYzgkByOMcVlhwK";
 
 function App() {
   const [news, setNews] = useState([]);
@@ -35,9 +35,14 @@ function App() {
       setError(false);
       setLoading(true);
       try {
-        await fetch(`${API_URL}?api-key=${API_KEY}${calcParams()}`, {
-          method: "get",
-        })
+        await fetch(
+          `${process.env.REACT_APP_API_URL}?api-key=${
+            process.env.REACT_APP_API_KEY
+          }${calcParams()}`,
+          {
+            method: "get",
+          }
+        )
           .then((resp) => resp.json())
           .then((resp) => {
             if (resp.status === "OK") {
